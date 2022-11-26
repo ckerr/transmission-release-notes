@@ -4,7 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "gen": "node lib/gen.js",
+    "render": "node lib/render.js",
     "start": "node lib/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
