@@ -16,7 +16,7 @@ generate a draft version of release notes.
 
 ## Making better notes:
 
-- Org members can add give a release note to a PR by adding a comment (or by editing the PR body) with a paragraph that starts with `Notes: `.
+- Org members can add give a release note to a PR by adding a comment (or by editing the PR body) with a paragraph that starts with `Notes: `. The rest of the text will be used as a summary for the change in the release notes.
 - Noteworthy changes should be given the label `notes:highlight`
 - Changes that shouldn't be in release notes should be given the label `notes:none` 
 - Please capitalize the first word of the note, use past tense, and the sentence with a period. This is to make the collated notes more consistent and readable.
