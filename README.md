@@ -14,9 +14,22 @@ generate a draft version of release notes.
 4. Run with `npm start -- ` and append a range of git endpoints you're diffing between, and the name of the release to draft, e.g: `npm start -- 4.0.0-beta.1..main --version 4.0.0-beta.2`. This will scrape the GitHub data into a local cache.
 5. Run the render script and redirect the output to a file: `npm run render > release-notes.md`
 
+Example use:
+
+```sh
+$ cd transmission-release-notes && npm install # setup
+$ rm -rf lib/.cache # only needed to pick up new changes, e.g. updated `Notes:` on GitHub
+$ GITHUB_TOKEN=redacted SRC_DIR=/path/to/transmission npm start -- 4.0.3..4.0.x --version=4.0.4
+$ cat lede | npm run --silent render -- --version=4.0.4 > /tmp/notes.md
+$ npx vmd /tmp/notes.md
+```
+
+So when preparing a release, keep editing PRs and repeat those last four lines until you're happy with `notes.md`.
+
 ## Making better notes:
 
 - Org members can add give a release note to a PR by adding a comment (or by editing the PR body) with a paragraph that starts with `Notes: `. The rest of the text will be used as a summary for the change in the release notes.
 - Noteworthy changes should be given the label `notes:highlight`
 - Changes that shouldn't be in release notes should be given the label `notes:none` 
 - Please capitalize the first word of the note, use past tense, and the sentence with a period. This is to make the collated notes more consistent and readable.
+- If there are several related PRs, try to give them the same `Notes:` summary so that they'll be grouped together.
