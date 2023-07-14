@@ -8,7 +8,7 @@ generate a draft version of release notes.
 
 ## To use this current version:
 
-1. Set the environment variable `GITHUB_TOKEN` to a personal access token generated from the website. This will let you avoid rate limiting while the script scrapes GitHub.
+1. Set the environment variable `GITHUB_TOKEN` to a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) generated from the website. This will let you avoid rate limiting while the script scrapes GitHub.
 2. Set the environment variable `SRC_DIR` to point to the Transmission source directory (e.g. where the top-level CMakeLists.txt is)
 3. Clone this repo and install the deps with `npm install`
 4. Run with `npm start -- ` and append a range of git endpoints you're diffing between, and the name of the release to draft, e.g: `npm start -- 4.0.0-beta.1..main --version 4.0.0-beta.2`. This will scrape the GitHub data into a local cache.
